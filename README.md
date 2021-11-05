@@ -3,8 +3,8 @@
 ## Description of the problem
 
 Optional ROM sockets are mapped at segment `0xe0000` while original
-Compaq Portable III BIOS searches for optional ROMs between segments `0xc800h`
-and `0xdf80`. For this reason the two sockets cannot befitted with any 27128
+Compaq Portable III BIOS searches for optional ROMs between segments `0xc800`
+and `0xdf80`. For this reason the two sockets cannot be fitted with any 27128
 optional ROM chips.
 
 The first word of the segment must be equal to `0xaa55` to be considered as the
@@ -241,8 +241,12 @@ to `0xa9`.
 Manipulate ROM images with srecord utilities.
 
 Combine odd & even into single ROM:
-`srec_cat -o ROM.bin -binary even.bin -binary -unsplit 2 0 odd.bin -binary -unsplit 2 1`
+```
+srec_cat -o ROM.bin -binary even.bin -binary -unsplit 2 0 odd.bin -binary -unsplit 2 1
+```
 
 Split ROM into odd and even:
-`srec_cat -o changed_even.bin -binary changed.bin -binary -split 2 0`
-`srec_cat -o changed_odd.bin -binary changed.bin -binary -split 2 1`
+```
+srec_cat -o changed_even.bin -binary changed.bin -binary -split 2 0
+srec_cat -o changed_odd.bin -binary changed.bin -binary -split 2 1
+```
