@@ -225,7 +225,7 @@ seg000:20B7                 retn
 seg000:20B7 sub_F2094       endp
 ```  
 
-As can be deducted it just adds all ROM bytes and expects the sum to be `0`.
+As can be deduced it just adds all ROM bytes and expects the sum to be `0`.
 
 In order to achieve this we simply have to calculate the sum of all ROM bytes
 except the last one, using something like HxD hex editor and then change the
